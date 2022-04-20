@@ -1,17 +1,9 @@
 package xyz.blapco.bl.mcrb.model;
 
 public class PublicationModel {
-    private String title;
+    // @@@ TODO (Biel Polastrini): Add ID and get date at publish time instead of letting the user choose the date on the date picker. It makes no sense.
     private String pubBody;
     private String date;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getPubBody() {
         return pubBody;
