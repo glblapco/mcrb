@@ -1,17 +1,17 @@
 package xyz.blapco.bl.mcrb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "publication")
 public class Publication {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(name = "publication_body")
     private String pubBody;
+    @Column(name = "publication_date")
     private LocalDateTime date;
 
     public long getId() {
