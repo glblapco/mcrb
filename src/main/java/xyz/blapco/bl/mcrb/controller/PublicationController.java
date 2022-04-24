@@ -7,19 +7,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import xyz.blapco.bl.mcrb.model.Publication;
 import xyz.blapco.bl.mcrb.repository.PublicationRepository;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 @Controller
 public class PublicationController {
-//@@@ TODO (Biel Polastrini): Get current datetime before storing the data.
     @Autowired
     private PublicationRepository publicationRepository;
     @RequestMapping(value = "publication/create", method = RequestMethod.GET)
     public String getPublication() {
-
         return "publication/create";
     }
 
     @RequestMapping(value = "publication/create", method = RequestMethod.POST)
-    public String createPublication(Publication publication) {
+    public String storePublication(Publication publication) {
+        publication.setPubDate(DateTimeFormatter
+                        .ofPattern("yyyy/MM/dd HH:mm:ss")
+                        .format(LocalDateTime.now(ZoneId.of("UTC"))));
         publicationRepository.save(publication);
         return "redirect:/publication/create";
     }

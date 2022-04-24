@@ -1,6 +1,7 @@
 package xyz.blapco.bl.mcrb.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,9 +11,11 @@ public class Publication {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name = "publication_body")
+    @NotNull
     private String pubBody;
     @Column(name = "publication_date")
-    private LocalDateTime date;
+    @NotNull
+    private String pubDate;
 
     public long getId() {
         return id;
@@ -30,11 +33,11 @@ public class Publication {
         this.pubBody = pubBody;
     }
 
-    public LocalDateTime getDate() {
-        return date;
+    public String getPubDate() {
+        return pubDate;
     }
 
-    public void setDate(LocalDateTime date) {
-        this.date = date;
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
     }
 }
