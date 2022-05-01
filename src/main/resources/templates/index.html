@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>mcrb</title>
@@ -7,6 +7,15 @@
     <body>
         <header>
             <h1>mcrb</h1>
+            <a>Home</a>
+            <br/>
+            <a href="/mcrb/publication/create">Publish</a>
         </header>
+        <div th:each="publication : ${publications}">
+            <div>
+                <p th:text="${publication.pubBody}"></p>
+                <p th:text="${publication.pubDate}"></p>
+            </div>
+        </div>
     </body>
 </html>

@@ -16,9 +16,7 @@ public class PublicationController {
     @Autowired
     private PublicationRepository publicationRepository;
     @RequestMapping(value = "publication/create", method = RequestMethod.GET)
-    public String getPublication() {
-        return "publication/create";
-    }
+    public String getCreatePublicationPage() { return "publication/create"; }
 
     @RequestMapping(value = "publication/create", method = RequestMethod.POST)
     public String storePublication(Publication publication) {
