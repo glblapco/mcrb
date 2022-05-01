@@ -1,4 +1,4 @@
-package xyz.blapco.bl.mcrb.model;
+package xyz.blapco.mcrb.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

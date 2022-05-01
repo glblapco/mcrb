@@ -1,4 +1,4 @@
-package xyz.blapco.bl.mcrb.configuration;
+package xyz.blapco.mcrb.configuration;
 
 import java.sql.Types;
 

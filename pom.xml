@@ -8,11 +8,11 @@
 		<version>2.6.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>xyz.blapco.bl</groupId>
+	<groupId>xyz.blapco</groupId>
 	<artifactId>mcrb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mcrb</name>
-	<description>Micro Blog.</description>
+	<description>Self-hosted microblog.</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

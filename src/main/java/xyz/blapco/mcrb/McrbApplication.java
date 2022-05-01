@@ -1,4 +1,4 @@
-package xyz.blapco.bl.mcrb;
+package xyz.blapco.mcrb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
