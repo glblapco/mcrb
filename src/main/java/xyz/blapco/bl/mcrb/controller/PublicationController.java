@@ -26,6 +26,6 @@ public class PublicationController {
                         .ofPattern("yyyy/MM/dd HH:mm:ss")
                         .format(LocalDateTime.now(ZoneId.of("UTC"))));
         publicationRepository.save(publication);
-        return "redirect:/publication/create";
+        return "redirect:/";
     }
 }
