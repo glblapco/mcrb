@@ -1,4 +1,4 @@
-package xyz.blapco.mcrb.security;
+package xyz.blapco.bl.mcrb.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

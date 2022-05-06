@@ -1,4 +1,4 @@
-package xyz.blapco.mcrb.dialect;
+package xyz.blapco.bl.mcrb.dialect;
 
 import java.sql.Types;
 

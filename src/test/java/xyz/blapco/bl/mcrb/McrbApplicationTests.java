@@ -1,4 +1,4 @@
-package xyz.blapco.mcrb;
+package xyz.blapco.bl.mcrb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
