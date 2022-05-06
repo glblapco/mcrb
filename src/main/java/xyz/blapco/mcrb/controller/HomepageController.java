@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import xyz.blapco.mcrb.model.Publication;
 import xyz.blapco.mcrb.repository.PublicationRepository;
 
-@Controller()
+@Controller
 public class HomepageController {
     @Autowired
     private PublicationRepository publicationRepository;
