@@ -26,4 +26,11 @@ public class PublicationController {
         publicationRepository.save(publication);
         return "redirect:/";
     }
+
+    @RequestMapping("publication/delete")
+    public String deletePublication(long id) {
+        Publication publication = publicationRepository.findById(id);
+        publicationRepository.delete(publication);
+        return "redirect:/";
+    }
 }

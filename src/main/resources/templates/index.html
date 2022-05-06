@@ -15,6 +15,12 @@
             <div>
                 <p th:text="${publication.pubBody}"></p>
                 <p th:text="${publication.pubDate}"></p>
+                <!--
+                Syntax: mvc.url('Controller initials#function')
+                in this case, the controller is PublicationController
+                and the function is deletePublication, so, mvc.url('PC#deletePublication').
+                -->
+                <a th:href="${(#mvc.url('PC#deletePublication').arg(0, publication.id)).build()}">Delete</a>
             </div>
         </div>
     </body>
