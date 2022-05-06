@@ -1,6 +1,7 @@
 package xyz.blapco.mcrb.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -8,22 +9,27 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    /* Shitty spring security syntax. Adding @Override
-       and using the same name for every function makes no sense.
+    /* @@@ Biel Polastrini: Shitty Spring Security code.
+       Using the same name for every function
+       and annotating them with @Override makes no sense.
+       Also, this authentication sucks.
      */
-
-    @Autowired
-    UserDetailsServiceConfiguration userDetailsServiceConfiguration;
+    @Value("${username:test}")
+    private String username;
+    @Value("${password:test}")
+    private String password;
+    @Value("${role:test}")
+    private String role;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /* Unauthenticated users can access the homepage and the login page.
+        /* @@@ Biel Polastrini: Unauthenticated users can
+           access the homepage and the login page.
            Any other page, requires authentication.
          */
         http.csrf().disable().authorizeRequests()
@@ -31,13 +37,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated().and().formLogin().permitAll()
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsServiceConfiguration).passwordEncoder(new BCryptPasswordEncoder());
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        /* @@@ Biel Polastrini: The placeholder username, password and role are "test".
+           If no username, password and role are provided as arguments,
+           it uses the default Spring credentials.
+           There's probably a much better way to do this, but that's what I can do for now.
+         */
+        if (!username.equals("test") || !password.equals("test") || !role.equals("test")  ) {
+            //@@@ Biel Polastrini: Using plain password because it won't be stored and can be changed everytime the program starts.
+            auth.inMemoryAuthentication().withUser(username).password("{noop}" + password).roles(role);
+        }
     }
+
     @Override
     public void configure(WebSecurity web) throws Exception {
-//        Ignore the CSS directory so the browser can access it.
+        //@@@ Biel Polastrini: Ignore the CSS directory so the browser can access it.
         web.ignoring().antMatchers("/style/**");
     }
 }
