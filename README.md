@@ -4,7 +4,7 @@ Self-hosted microblog.
 
 ## Usage
 
-`$ mcrb --username=user --password=password --role=USER`
+`$ java -jar mcrb-0.0.1-SNAPSHOT.jar --username=user --password=password --role=USER`
 
 The `username` argument will be your login username and the `password` argument will
 be your login password. The `role` argument can have the values `ADMIN` or `USER`.
