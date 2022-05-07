@@ -12,9 +12,7 @@ be your login password. The `role` argument can have the values `ADMIN` or `USER
 Those credentials get stored in-memory, so, they can be changed everytime the software
 starts.
 
-Example mcrb website: [bl.blapco.xyz/mcrb](https://bl.blapco.xyz/mcrb)
-
-![mcrb demo video](https://imgur.com/a/MLCC1Ue)
+[mcrb demo video](https://i.imgur.com/y7hANmI.mp4)
 
 ## Stack
 
