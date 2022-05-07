@@ -3,25 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>mcrb</title>
+        <link rel="stylesheet" href="style/style.css"/>
     </head>
     <body>
         <header>
             <h1>mcrb</h1>
-            <a>Home</a>
-            <br/>
-            <a href="./publication/create">Publish</a>
+
+            <div class="menu">
+                <a>Home</a>
+                <a href="./publication/create">Publish</a>
+            </div>
         </header>
         <div th:each="publication : ${publications}">
-            <div>
+            <div class="pubs">
                 <p th:text="${publication.pubBody}"></p>
-                <p th:text="${publication.pubDate}"></p>
+                <small style="color: #444;" th:text="${publication.pubDate}"></small>
                 <!--
-                Syntax: mvc.url('Controller initials#function')
+                @@@ Biel Polastrini: Syntax: mvc.url('Controller initials#function')
                 in this case, the controller is PublicationController
                 and the function is deletePublication, so, mvc.url('PC#deletePublication').
                 -->
-                <a th:href="${(#mvc.url('PC#deletePublication').arg(0, publication.id)).build()}">Delete</a>
+                <small><a th:href="${(#mvc.url('PC#deletePublication').arg(0, publication.id)).build()}" style="color: red; float: right;">Delete</a></small>
             </div>
         </div>
+    <footer>
+        <p>mcrb is made by <a href="https://bl.blapco.xyz" target="_blank">Biel Polastrini</a>.</p>
+    </footer>
     </body>
 </html>

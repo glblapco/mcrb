@@ -1,0 +1,44 @@
+body {
+    font-family: serif;
+    line-height: 1.5;
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu a {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+textarea {
+    color: black;
+    width: 100%;
+    resize: none;
+    font-family: serif;
+    font-size: 16px;
+    padding: 10px;
+}
+
+button { cursor: pointer; }
+
+.pubs {
+    padding: 10px;
+    border: 1px solid #cdc7c2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+}
