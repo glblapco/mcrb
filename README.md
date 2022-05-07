@@ -14,7 +14,7 @@ starts.
 
 Example mcrb website: [bl.blapco.xyz/mcrb](https://bl.blapco.xyz/mcrb)
 
-![mcrb demo video](mcrb_demo.mp4)
+![mcrb demo video](https://imgur.com/a/MLCC1Ue)
 
 ## Stack
 
