@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create publication</title>
+    <link rel="stylesheet" href="style/style.css"/>
+</head>
+<body>
+<header>
+    <h1>mcrb</h1>
+    <br/>
+    <p>Please, login.</p>
+</header>
+<form method="post" th:action="@{/login}">
+        <div th:if="${param.error}" style="color: red;">
+            Invalid username or password.
+        </div>
+        <div th:if="${param.logut}">
+            You have been logged out.
+        </div>
+        <br/>
+
+        Username
+        <br/>
+        <input style="width: 100%; font-family: serif;" type="text" id="username" name="username"/>
+        <br/><br/>
+        Password
+        <br/>
+        <input style="width: 100%; font-family: serif;" type="password" id="password" name="password"/>
+        <br/><br/>
+        <button type="submit">Login</button>
+</form>
+</body>
+</html>
